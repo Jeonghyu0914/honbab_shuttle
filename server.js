@@ -12,6 +12,7 @@ app.use(
     origin: "*", // 모든 도메인 허용 (보안상 필요하면 특정 도메인만 허용)
     methods: ["POST", "GET"],
     allowedHeaders: ["Content-Type"],
+    credentials: true,
   })
 );
 
@@ -31,7 +32,7 @@ app.post("/send-sms", async (req, res) => {
   try {
     const response = await sms.sendOne({
       to: "01057882282", // 관리자의 전화번호
-      from: "01040037751", // CoolSMS에 등록된 발신번호
+      from: process.env.SMS_SENDER_NUMBER, // CoolSMS에 등록된 발신번호
       text: messageBody, // 보낼 메시지 내용
     });
 
