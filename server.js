@@ -13,7 +13,7 @@ app.use(cors()); // CORS 정책 허용
 
 const sms = new Coolsms.default(process.env.COOLSMS_API_KEY, process.env.COOLSMS_API_SECRET);
 
-const allowedOrigins = ["https://your-frontend-domain.com"];
+const allowedOrigins = ["http://www.birdn.co.kr"];
 app.use(
   cors({
     origin: allowedOrigins,
