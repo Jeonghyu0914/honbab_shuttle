@@ -9,6 +9,9 @@ const StickyMenu = () => {
     consent: false,
   });
   const [loading, setLoading] = useState(false);
+  const [message, setMessage] = useState("");
+
+  const API_URL = process.env.SMS_SERVER_API_URL;
 
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
@@ -27,9 +30,10 @@ const StickyMenu = () => {
     }
 
     setLoading(true);
+    setMessage(""); // 메시지 초기화
 
     try {
-      const response = await axios.post("http://localhost:2150/send-sms", { name, location, phone }, { headers: { "Content-Type": "application/json" } });
+      const response = await axios.post(API_URL, { name, location, phone }, { headers: { "Content-Type": "application/json" }, withCredentials: false });
 
       console.log("[프론트엔드] 서버 응답:", response.data);
 
