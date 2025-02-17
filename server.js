@@ -3,24 +3,24 @@ import cors from "cors";
 import Coolsms from "coolsms-node-sdk";
 import "dotenv/config";
 
-const express = require("express");
-const cors = require("cors");
 require("dotenv").config();
 
 const app = express();
+const PORT = process.env.PORT;
 app.use(express.json());
 app.use(cors()); // CORS 정책 허용
 
 const sms = new Coolsms.default(process.env.COOLSMS_API_KEY, process.env.COOLSMS_API_SECRET);
 
-const allowedOrigins = ["http://www.birdn.co.kr"];
 app.use(
   cors({
-    origin: allowedOrigins,
-    methods: ["POST"],
+    origin: "*", // 모든 도메인 허용 (보안상 필요하면 특정 도메인만 허용)
+    methods: ["POST", "GET"],
     allowedHeaders: ["Content-Type"],
   })
 );
+
+app.use(express.json());
 
 app.post("/send-sms", async (req, res) => {
   const { name, location, phone } = req.body;
@@ -35,7 +35,7 @@ app.post("/send-sms", async (req, res) => {
 
   try {
     const response = await sms.sendOne({
-      to: "01024643533", // 관리자의 전화번호
+      to: "01057882282", // 관리자의 전화번호
       from: "01040037751", // CoolSMS에 등록된 발신번호
       text: messageBody, // 보낼 메시지 내용
     });
@@ -49,5 +49,4 @@ app.post("/send-sms", async (req, res) => {
 });
 
 // 서버 실행
-const PORT = process.env.PORT || 2150;
 app.listen(PORT, () => console.log(`🚀 Server running on port ${PORT}`));
