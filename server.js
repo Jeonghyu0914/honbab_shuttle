@@ -3,14 +3,9 @@ import cors from "cors";
 import Coolsms from "coolsms-node-sdk";
 import "dotenv/config";
 
-require("dotenv").config();
-
 const app = express();
 const PORT = process.env.PORT;
 app.use(express.json());
-app.use(cors()); // CORS 정책 허용
-
-const sms = new Coolsms.default(process.env.COOLSMS_API_KEY, process.env.COOLSMS_API_SECRET);
 
 app.use(
   cors({
@@ -20,7 +15,7 @@ app.use(
   })
 );
 
-app.use(express.json());
+const sms = new Coolsms.default(process.env.COOLSMS_API_KEY, process.env.COOLSMS_API_SECRET);
 
 app.post("/send-sms", async (req, res) => {
   const { name, location, phone } = req.body;
