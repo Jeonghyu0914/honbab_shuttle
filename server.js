@@ -19,15 +19,15 @@ app.use(
 const sms = new Coolsms.default(process.env.COOLSMS_API_KEY, process.env.COOLSMS_API_SECRET);
 
 app.post("/send-sms", async (req, res) => {
-  const { name, location, phone } = req.body;
+  const { name, email, phone, location } = req.body;
 
-  console.log("[요청 도착] 문의 정보:", { name, location, phone });
+  console.log("[요청 도착] 문의 정보:", { name, email, phone, location });
 
   if (!name || !location || !phone) {
     return res.status(400).json({ error: "모든 필드를 입력해야 합니다." });
   }
 
-  const messageBody = `문의 요청\n이름: ${name}\n지역: ${location}\n연락처: ${phone}`;
+  const messageBody = `문의 요청\n이름: ${name}\n이메일: ${email}\n연락처: ${phone}\n지역: ${location}\n`;
 
   try {
     const response = await sms.sendOne({

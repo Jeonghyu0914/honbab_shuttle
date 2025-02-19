@@ -2,7 +2,7 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <footer className="bg-black text-white pb-40 border-t border-black text-sm">
+    <footer className="bg-black text-white pb-10 border-t border-black text-sm">
       <div className="max-w-screen-lg mx-auto px-6 flex flex-row justify-between items-center flex-nowrap gap-6">
         {/* 좌측 (로고 및 대표 전화) */}
         <div className="flex flex-col items-start min-w-[180px]">
