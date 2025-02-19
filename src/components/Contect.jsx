@@ -5,8 +5,8 @@ import useWindowSize from "../hooks/useWindowSize";
 const Contect = () => {
   const [formData, setFormData] = useState({
     name: "",
-    email: "",
     phone: "",
+    email: "",
     location: "",
     consent: false,
   });
@@ -23,7 +23,7 @@ const Contect = () => {
   };
 
   const handleSendSMS = async () => {
-    const { name, email, phone, location, consent } = formData;
+    const { name, phone, email, location, consent } = formData;
 
     if (!name || !location || !phone || !email || !consent) {
       alert("⚠️ 모든 필드를 입력하고 개인정보 수집에 동의해야 합니다.");
@@ -33,13 +33,13 @@ const Contect = () => {
     setLoading(true);
 
     try {
-      const response = await axios.post(API_URL, { name, email, phone, location }, { headers: { "Content-Type": "application/json" } });
+      const response = await axios.post(API_URL, { name, phone, email, location }, { headers: { "Content-Type": "application/json" } });
 
       console.log("[프론트엔드] 서버 응답:", response.data);
 
       if (response.data.success) {
         alert("문의가 정상적으로 접수되었습니다!");
-        setFormData({ name: "", email: "", phone: "", location: "", consent: false }); // 입력 필드 초기화
+        setFormData({ name: "", phone: "", email: "", location: "", consent: false }); // 입력 필드 초기화
       } else {
         alert("문자 전송 실패: " + response.data.error);
       }
