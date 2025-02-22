@@ -18,6 +18,9 @@ dist-ssr
 .env.production
 .env.development
 
+# pem 파일 제외
+*.pem
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json

@@ -2,12 +2,7 @@ import React, { useEffect, useState } from "react";
 import "./App.css";
 import Header from "./components/Header.jsx";
 import MainPage from "./components/MainPage.jsx";
-import CategoryNav from "./components/CategoryNav.jsx";
-import MenuGrid from "./components/MenuGrid.jsx";
-import SideMenuGrid from "./components/SideMenuPage.jsx";
 import Footer from "./components/Footer.jsx";
-import ImageSlider from "./components/ImageSlider.jsx";
-import { menuList, sideMenuList } from "./assets/menuList.js";
 import mainImg from "../public/mainBackground.png";
 import logo from "../public/logo.jpeg";
 import black from "../public/black.png";
@@ -29,20 +24,8 @@ const App = () => {
   return (
     <div id="html" className="scroll-smooth text-white min-h-screen flex flex-col">
       <Header isTransparent={isTransparent} />
-      {/* <StickyMenu /> */}
       <main className="flex-grow -mt-20">
-        <MainPage id="main1" image={mainImg} />
-        {/* <CategoryNav id="CategoryNav" />
-        <MenuGrid id="찌개" menuItems={menuList[0]} />
-        <MenuGrid id="옛날 도시락" menuItems={menuList[1]} />
-        <MenuGrid id="정찬 도시락" menuItems={menuList[2]} />
-        <MenuGrid id="덮밥" menuItems={menuList[3]} />
-        <MenuGrid id="짜글이" menuItems={menuList[4]} />
-        <MenuGrid id="비빔밥" menuItems={menuList[5]} />
-        <MenuGrid id="고기만찬" menuItems={menuList[6]} />
-        <MenuGrid id="볶음밥" menuItems={menuList[7]} />
-        <SideMenuGrid id="사이드" menuItems={sideMenuList} />
-        <MainPage id="temp" image={black} /> */}
+        <MainPage id="main" image={mainImg} />
       </main>
       <Footer id="footer" />
     </div>

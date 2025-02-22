@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import useWindowSize from "../hooks/useWindowSize";
 
-const Contect = () => {
+const Contect = ({ id }) => {
   const [formData, setFormData] = useState({
     name: "",
     phone: "",
@@ -59,6 +59,7 @@ const Contect = () => {
 
   return (
     <div
+      id={id}
       className="absolute w-full flex justify-center items-center py-10 bg-white"
       style={{
         top: `${dynamicTop}px`, // 창 너비에 따라 자동 조정
