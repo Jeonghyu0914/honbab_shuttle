@@ -8,8 +8,8 @@ import smoothScroll from "../utils/smoothScroll.js"; // 스크롤 함수 분리
 
 const MainPage = ({ id, image }) => {
   return (
-    <section className="relative w-full min-h-screen flex flex-col items-center justify-start overflow-auto">
-      <img id={id} src={image} alt="메인 이미지" className="w-screen h-auto max-w-none" />
+    <section className="mt-16 sm:mt-0 relative w-full min-h-screen flex flex-col items-center justify-start overflow-auto">
+      <img id={id} src={image} alt="메인 이미지" className="w-screen h-auto max-w-none z-0" />
       <Element id="ele1-1" image="ele1-1.png" baseTop={525} left={8} className="absolute w-1/6 h-auto" />
       <Element id="ele1-2" image="ele1-2.png" baseTop={570} left={27.5} className="absolute w-2/9 h-auto" />
       <Element id="ele1-3" image="ele1-3.png" baseTop={525} left={50} className="absolute w-2/9 h-auto" />

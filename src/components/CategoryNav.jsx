@@ -6,7 +6,7 @@ import SideMenuGrid from "./SideMenuGrid.jsx";
 
 // Category Navigation Component
 const CategoryNav = ({ id }) => {
-  const [selectedCategory, setSelectedCategory] = useState(null);
+  const [selectedCategory, setSelectedCategory] = useState(["찌개", 0]);
 
   const { width } = useWindowSize();
   const baseWidth = 550;
@@ -24,18 +24,18 @@ const CategoryNav = ({ id }) => {
       }}
     >
       {/* 제목 */}
-      <div className="flex justify-center items-center pt-7 pb-3">
-        <h1 className="text-4xl text-center text-black">MENU</h1>
+      <div className="flex justify-center items-center pt-7 sm:pb-3 pb-1">
+        <h1 className="text-2xl sm:text-4xl text-center text-black">MENU</h1>
       </div>
-      <div className="flex justify-center items-center pb-6">
-        <p className="text-yellow-500 text-lg">"다양한 한식 메뉴로 모든 고객을 사로잡는 혼밥셔틀"</p>
+      <div className="flex justify-center items-center sm:pb-6 pb-2">
+        <p className="text-yellow-500 text-sm sm:text-lg">"다양한 한식 메뉴로 모든 고객을 사로잡는 혼밥셔틀"</p>
       </div>
 
       {/* 카테고리 선택 버튼 */}
       <div className="flex justify-center items-center w-full max-w-screen-lg mx-auto">
         <div className="flex flex-wrap justify-center gap-2 w-full px-4 py-2 bg-gray-200 rounded-lg">
           {["찌개", "옛날 도시락", "정찬 도시락", "덮밥", "짜글이", "비빔밥", "고기만찬", "볶음밥", "사이드"].map((category, index) => (
-            <button key={index} className={`h-7 text-base px-4 rounded-full transition-all ${selectedCategory && selectedCategory[1] === index ? "bg-orange-500 text-white" : "bg-white text-black hover:bg-orange-500 hover:text-white"}`} onClick={() => setSelectedCategory([category, index])}>
+            <button key={index} className={`h-4 sm:h-7 text-[10px] sm:text-base px-2 rounded-full transition-all ${selectedCategory && selectedCategory[1] === index ? "bg-orange-500 text-white" : "bg-white text-black hover:bg-orange-500 hover:text-white"}`} onClick={() => setSelectedCategory([category, index])}>
               {category}
             </button>
           ))}

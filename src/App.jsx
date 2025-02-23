@@ -23,6 +23,9 @@ const App = () => {
   }, []);
   return (
     <div id="html" className="scroll-smooth text-white min-h-screen flex flex-col">
+      <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, minimum-scale=1" />
+      </head>
       <Header isTransparent={isTransparent} />
       <main className="flex-grow -mt-20">
         <MainPage id="main" image={mainImg} />

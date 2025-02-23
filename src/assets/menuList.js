@@ -27,15 +27,7 @@ const menuList = [
     { name: "갈비 옛날도시락", image: getImage("m019") },
     { name: "육회 옛날도시락", image: getImage("m020") },
   ],
-  [
-    { name: "고기 짜글이", image: getImage("m021") },
-    { name: "참치 짜글이", image: getImage("m022") },
-    { name: "스팸 짜글이", image: getImage("m023") },
-    { name: "훈제오리 짜글이", image: getImage("m024") },
-    { name: "우삼겹 짜글이", image: getImage("m025") },
-    { name: "우삼겹 된장 짜글이", image: getImage("m026") },
-    { name: "돈까스 김치나배", image: getImage("m027") },
-  ],
+
   [
     { name: "돈까스덮밥", image: getImage("m028") },
     { name: "갈비덮밥", image: getImage("m029") },
@@ -47,6 +39,15 @@ const menuList = [
     { name: "김치 우삼겹덮밥", image: getImage("m035") },
     { name: "매콤 삼겹덮밥", image: getImage("m036") },
     { name: "매콤 우삼겹덮밥", image: getImage("m037") },
+  ],
+  [
+    { name: "고기 짜글이", image: getImage("m021") },
+    { name: "참치 짜글이", image: getImage("m022") },
+    { name: "스팸 짜글이", image: getImage("m023") },
+    { name: "훈제오리 짜글이", image: getImage("m024") },
+    { name: "우삼겹 짜글이", image: getImage("m025") },
+    { name: "우삼겹 된장 짜글이", image: getImage("m026") },
+    { name: "돈까스 김치나배", image: getImage("m027") },
   ],
   [
     { name: "콩나물 비빔밥", image: getImage("m038") },
