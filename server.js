@@ -31,7 +31,7 @@ app.post("/send-sms", async (req, res) => {
 
   try {
     const response = await sms.sendOne({
-      to: "01057882282", // 관리자의 전화번호
+      to: "01040037751", // 관리자의 전화번호
       from: process.env.SMS_SENDER_NUMBER, // CoolSMS에 등록된 발신번호
       text: messageBody, // 보낼 메시지 내용
     });
