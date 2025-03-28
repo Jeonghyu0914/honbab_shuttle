@@ -1,5 +1,5 @@
 # Server.on
 
-ssh -i "honbab_shuttle.pem" ubuntu@43.202.84.177
+ssh -i "honbab_shuttle.pem" ubuntu@XX.XXX.XXX.XX
 pm2 start coolsms-server
 cd honbab_shuttle/
